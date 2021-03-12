@@ -97,6 +97,7 @@ public class ViewPostFragment extends BaseFragment<FragmentViewPostBinding> {
                         });
                     }
                 });
+                dialog.setNegativeButton("No", null);
 
                 dialog.create().show();
             }
