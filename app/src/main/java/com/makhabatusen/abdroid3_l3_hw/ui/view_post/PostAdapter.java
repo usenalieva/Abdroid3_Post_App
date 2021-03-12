@@ -1,6 +1,7 @@
 package com.makhabatusen.abdroid3_l3_hw.ui.view_post;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -52,6 +53,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         notifyDataSetChanged();
     }
 
+    public void deletePost(int pos) {
+        posts.remove(pos);
+        notifyItemRemoved(pos);
+    }
+
 
     public class PostViewHolder extends RecyclerView.ViewHolder {
         private final ItemPostBinding ui;
@@ -61,6 +67,12 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             this.ui = ui;
             ui.getRoot().setOnClickListener(v-> {
                 listener.navigate(getAdapterPosition());
+            });
+
+
+            ui.getRoot().setOnLongClickListener(view -> {
+                listener.deletePost(getAdapterPosition(), posts.get(getAdapterPosition()));
+                return true;
             });
 
         }
