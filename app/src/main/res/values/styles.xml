@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="tv_title_content_style">
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="tv_user_group_style" parent="tv_title_content_style">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+</resources>

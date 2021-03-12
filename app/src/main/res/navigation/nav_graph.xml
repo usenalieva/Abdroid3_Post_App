@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/viewPostFragment">
+
+    <fragment
+        android:id="@+id/viewPostFragment"
+        android:name="com.makhabatusen.abdroid3_l3_hw.ui.view_post.ViewPostFragment"
+        android:label="ViewPostFragment" >
+        <action
+            android:id="@+id/action_viewPostFragment_to_editPostFragment"
+            app:destination="@id/editPostFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/editPostFragment"
+        android:name="com.makhabatusen.abdroid3_l3_hw.ui.edit_post.EditPostFragment"
+        android:label="EditPostFragment" >
+        <argument
+            android:name="post"
+            app:argType="com.makhabatusen.abdroid3_l3_hw.data.model.Post"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_editPostFragment_to_viewPostFragment"
+            app:destination="@id/viewPostFragment" />
+    </fragment>
+</navigation>
