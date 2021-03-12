@@ -35,6 +35,7 @@ public class ViewPostFragment extends BaseFragment<FragmentViewPostBinding> {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         adapter = new PostAdapter();
+        loadPosts();
     }
 
     private void loadPosts() {
@@ -54,7 +55,6 @@ public class ViewPostFragment extends BaseFragment<FragmentViewPostBinding> {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        loadPosts();
         init();
 
     }
