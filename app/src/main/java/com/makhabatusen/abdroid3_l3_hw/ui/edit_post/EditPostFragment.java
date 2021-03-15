@@ -1,7 +1,9 @@
 package com.makhabatusen.abdroid3_l3_hw.ui.edit_post;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -68,7 +70,6 @@ public class EditPostFragment extends BaseFragment<FragmentEditPostBinding> {
 
                 @Override
                 public void onFailure(Call<Post> call, Throwable t) {
-
                 }
             });
         } else {

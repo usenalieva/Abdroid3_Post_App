@@ -2,9 +2,9 @@ package com.makhabatusen.abdroid3_l3_hw.ui.view_post;
 
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -87,12 +87,17 @@ public class ViewPostFragment extends BaseFragment<FragmentViewPostBinding> {
                         RetrofitBuilder.getInstance().deletePost(post.getId().toString()).enqueue(new Callback<Post>() {
                             @Override
                             public void onResponse(Call<Post> call, Response<Post> response) {
-                                adapter.deletePost(pos);
+                                if (response.isSuccessful()) {
+                                    adapter.deletePost(pos);
+                                } else {
+                                    Log.e("TAG", "onResponse: "+response.message() );
+                                }
 
                             }
 
                             @Override
                             public void onFailure(Call<Post> call, Throwable t) {
+                                Log.e("TAG", "onFailure: "+t.getLocalizedMessage() );
                             }
                         });
                     }
@@ -101,8 +106,6 @@ public class ViewPostFragment extends BaseFragment<FragmentViewPostBinding> {
 
                 dialog.create().show();
             }
-
-//
         });
     }
 

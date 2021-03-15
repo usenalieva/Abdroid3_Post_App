@@ -29,7 +29,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     @NonNull
     @Override
     public PostViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ItemPostBinding ui = ItemPostBinding.inflate(LayoutInflater.from(parent.getContext()));
+        ItemPostBinding ui = ItemPostBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
         return new PostViewHolder(ui);
     }
 
@@ -65,6 +65,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         public PostViewHolder(@NonNull ItemPostBinding ui) {
             super(ui.getRoot());
             this.ui = ui;
+
             ui.getRoot().setOnClickListener(v-> {
                 listener.navigate(getAdapterPosition());
             });

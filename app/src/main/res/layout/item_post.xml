@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
     android:padding="16dp">
 
 
@@ -19,6 +20,8 @@
 
     <TextView
         android:id="@+id/tv_content"
+        android:gravity="center"
+
         style="@style/tv_title_content_style"
         android:textColor="@color/light_blue"
         android:textSize="20sp"
@@ -28,6 +31,8 @@
 
     <TextView
         android:id="@+id/tv_user"
+        android:gravity="center"
+
         style="@style/tv_user_group_style"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,6 +40,8 @@
 
     <TextView
         android:id="@+id/tv_group"
+        android:gravity="center"
+
         style="@style/tv_user_group_style"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
